@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-image: url('./soundwave.png');
-
+  filter: drop-shadow(5px 5px 5px #2727a8);
 }
 
 
