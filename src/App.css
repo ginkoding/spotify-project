@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-image: url('./soundwave.png');
-  filter: drop-shadow(5px 5px 5px #2727a8);
+  filter: drop-shadow(5px 5px 2px #2727a8);
 }
 
 
@@ -13,12 +13,13 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-color: rgba(39, 6, 32, 0.33);
 }
 
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #f3a96d, #e73c7e, #23a6d5, #23d573);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 10s ease infinite;
 	height: 100vh;
 }
 
@@ -36,14 +37,14 @@ body {
 
 h1{
   font-size: 7rem;
-  text-shadow: 4px 4px 1px rgba(0,0,0,.5);
+  text-shadow: 8px 8px 1px rgba(0,0,0,.5);
   opacity: 1;
 }
 
 a{
   font-size: 4rem;
   font-weight: 700;
-  color: blueviolet;
+  color: #342b72;
   text-decoration: none;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
