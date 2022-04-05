@@ -49,15 +49,28 @@ a{
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 
-
 #images{
   display: flex;
   flex-direction: column;
   padding: 40px;
 }
 
+#contain{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
 img{
   max-width: 400px;
+  border-radius: 50%;
+}
+
+img:hover{
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: 1.2s;
 }
 
 button{

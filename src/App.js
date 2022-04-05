@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import './App.css';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom'
 
 
 function App() {
@@ -54,33 +55,40 @@ function App() {
 
     const renderArtists = () => {
         return artists.map(artist => (
-            <div key={artist.id} id="images">
-                {artist.images.length ? <img width={"100%"} src={artist.images[0].url} alt=""/> : <div>No Image</div>}
-                {artist.name}
+            <div id="contain">
+                <div key={artist.id} id="images">
+                    {artist.images.length ? <a href={artist.external_urls.spotify} target="_blank"> <img width={"100%"} src={artist.images[0].url} alt=""/></a> : <div>No Image</div>}
+                    {artist.name}
+                    {artist.followers.total ? <p>Total followers: {artist.followers.total}</p> : <p>No Followers</p>}
+                </div>
             </div>
         ))
     }
+
+
+
+
 
     return (
         <div className="App">
             <header className="App-header">
                 <h1>Spotify React Project</h1>
-                
-                {!token ?
+
+                {token ?
+                    <form onSubmit={searchArtists}>
+                        <input type="text" placeholder="Artist Name" onChange={e => setSearchKey(e.target.value)}/>
+                        <button type={"submit"}>Search</button>
+                    </form>
+                    : <h2></h2>
+                }
+
+{!token ?
                     <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
                         to Spotify</a>
                     : <button onClick={logout}>Logout</button>}
 
-                {token ?
-                    <form onSubmit={searchArtists}>
-                        <input type="text" onChange={e => setSearchKey(e.target.value)}/>
-                        <button type={"submit"}>Search</button>
-                    </form>
-
-                    : <h2>Please login</h2>
-                }
-
                 {renderArtists()}
+            
 
             </header>
         </div>
