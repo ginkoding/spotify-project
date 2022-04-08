@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 function App() {
     const CLIENT_ID = "347edc5f4c364696ad4b0acfba33f197"
-    const REDIRECT_URI = "http://localhost:3000"
+    const REDIRECT_URI = "https://ginkoding.github.io/spotify-project/"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
 
